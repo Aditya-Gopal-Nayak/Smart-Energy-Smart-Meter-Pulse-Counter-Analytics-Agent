@@ -1,0 +1,22 @@
+
+CXX = g++
+
+CXXFLAGS = -Wall -Wextra -std=c++17 -Iinclude
+
+TARGET = smart_meter
+
+SRC = src/main.cpp \
+      src/PulseGenerator.cpp \
+      src/DeviceDriver.cpp \
+      src/PulseCounter.cpp \
+      src/EnergyCalculator.cpp \
+      src/AnalyticsEngine.cpp \
+      src/Logger.cpp
+
+all:
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+clean:
+	rm -f $(TARGET)
+
+.PHONY: all clean
