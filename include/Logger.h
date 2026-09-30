@@ -8,11 +8,7 @@ using namespace std;
 class Logger {
 public:
     explicit Logger(const string& filename);
-
-    void logReading(unsigned long long pulses,
-                    double energyKWh,
-                    double averagePower,
-                    const string& status);
+    void logReading(unsigned long long pulses,double energyKWh,double averagePower,const string& status);
 
 private:
     string filename;
