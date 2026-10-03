@@ -8,7 +8,7 @@
 | **Domain** | Linux, Device Drivers, System Programming & C++ |
 | **Language / Standard** | C++17 |
 | **Platform** | Linux |
-| **Build System** | `g++` + `Makefile` |
+| **Build System** | `g++` |
 | **Author** | Aditya Gopal Nayak |
 
 ---
@@ -36,16 +36,15 @@
 19. [C++ Concepts Used](#19-c-concepts-used)
 20. [System Programming Concepts](#20-system-programming-concepts)
 21. [Software Architecture Concepts](#21-software-architecture-concepts)
-22. [UML Documentation](#22-uml-documentation)
-23. [Logging](#23-logging)
-24. [Makefile Commands](#24-makefile-commands)
-25. [Git and GitHub](#25-git-and-github)
-26. [Project Development Stages](#26-project-development-stages)
-27. [Project Scope](#27-project-scope)
-28. [Limitations](#28-limitations)
-29. [Future Enhancements](#29-future-enhancements)
-30. [Author](#30-author)
-31. [Conclusion](#31-conclusion)
+22. [Logging](#22-logging)
+23. [Makefile Commands](#23-makefile-commands)
+24. [Git and GitHub](#24-git-and-github)
+25. [Project Development Stages](#25-project-development-stages)
+26. [Project Scope](#26-project-scope)
+27. [Limitations](#27-limitations)
+28. [Future Enhancements](#28-future-enhancements)
+29. [Author](#29-author)
+30. [Conclusion](#30-conclusion)
 
 ---
 
@@ -97,8 +96,7 @@ This project addresses that problem in a controlled, hardware-free environment. 
 |---|---|
 | **Category** | Individual Academic Project |
 | **Domain** | Linux, Device Drivers, System Programming & C++ |
-| **Training Context** | 20-day technical training covering Linux, C++, Computer Architecture, Hardware and Software concepts, Linux Device Driver concepts and System Programming |
-| **Nature** | Software-based implementation demonstrating the concepts covered during the training |
+| **Nature** | Software-based implementation |
 
 ---
 
@@ -115,8 +113,10 @@ This project addresses that problem in a controlled, hardware-free environment. 
 
 **Compiler flags used:**
 
+
 ```
--Wall -Wextra -std=c++17 -Iinclude
+g++ -Wall -Wextra -std=c++17 -Iinclude src/main.cpp src/PulseGenerator.cpp src/DeviceDriver.cpp src/PulseCounter.cpp src/EnergyCalculator.cpp src/AnalyticsEngine.cpp src/Logger.cpp -o smart_meter
+
 ```
 
 ---
@@ -231,8 +231,7 @@ Energy (kWh)     Measurement Time
 **End-to-end summary:**
 
 ```text
-Input → Pulse Generation → Device Simulation → Pulse Counting
-      → Energy Calculation → Analytics → Cost Calculation → Logging
+Input → Pulse Generation → Device Simulation → Pulse Counting → Energy Calculation → Analytics → Cost Calculation → Logging
 ```
 
 ---
@@ -298,10 +297,7 @@ SmartEnergyMeter/
 ├── tests/
 ├── logs/
 │   └── meter.log
-├── docs/
-│   ├── PRD.md
-│   ├── architecture.md
-│   └── uml/
+|
 ├── Makefile
 └── README.md
 ```
@@ -312,7 +308,6 @@ SmartEnergyMeter/
 | `include/` | Header files (class declarations) |
 | `tests/` | Directory for test-related material |
 | `logs/` | Runtime output; contains `meter.log` |
-| `docs/` | Product Requirements Document, architecture notes, UML diagrams |
 | `Makefile` | Build automation |
 | `README.md` | Project documentation |
 
@@ -472,21 +467,20 @@ Enter measurement time (hours):
           SMART ENERGY METER
 ========================================
 
-Enter number of pulses: 100
-Enter measurement time (hours): 1
+Enter number of pulses: 560
+Enter measurement time (hours): 5
 
 Simulating meter operation...
 
 ----------------------------------------
            METER ANALYTICS
 ----------------------------------------
-Total Pulses       : 100
-Energy Consumed    : 0.100 kWh
-Measurement Time   : 1.00 hours
-Average Power      : 100.00 W
+Total Pulses       : 560
+Energy Consumed    : 0.560 kWh
+Measurement Time   : 5.00 hours
+Average Power      : 112.00 W
 Electricity Rate   : ₹8.00 / kWh
-Estimated Cost     : ₹0.80
-----------------------------------------
+Estimated Cost     : ₹4.48
 Reading saved to   : logs/meter.log
 System Status      : RUNNING
 ========================================
@@ -645,25 +639,9 @@ Logging
 
 ---
 
-## 22. UML Documentation
-
-UML is used to document the software architecture. The diagrams are kept under:
-
-```text
-docs/uml/
-```
-
-Diagram types used for architecture documentation include:
-
-- **Class Diagram** — the modules and their responsibilities
-- **Sequence Diagram** — the order of interactions during one run
-- **State Machine Diagram** — behaviour over the lifetime of a run
-
-Further design material is available in `docs/PRD.md` and `docs/architecture.md`.
-
 ---
 
-## 23. Logging
+## 22. Logging
 
 The `Logger` module writes each reading to:
 
@@ -683,7 +661,7 @@ The log uses standard C++ file streams and provides a persistent record of each 
 
 ---
 
-## 24. Makefile Commands
+## 23. Makefile Commands
 
 | Command | Description |
 |---|---|
@@ -693,7 +671,7 @@ The log uses standard C++ file streams and provides a persistent record of each 
 
 ---
 
-## 25. Git and GitHub
+## 24. Git and GitHub
 
 The project is maintained with **Git** and intended to be hosted on GitHub.
 
@@ -713,7 +691,7 @@ git push
 
 ---
 
-## 26. Project Development Stages
+## 25. Project Development Stages
 
 The academic training follows six development stages.
 
@@ -728,7 +706,7 @@ The academic training follows six development stages.
 
 ---
 
-## 27. Project Scope
+## 26. Project Scope
 
 ### ✅ In Scope (Current Implementation)
 
@@ -757,7 +735,7 @@ The academic training follows six development stages.
 
 ---
 
-## 28. Limitations
+## 27. Limitations
 
 - Pulses are **simulated**; no physical meter is connected.
 - `DeviceDriver` is a **user-space simulation**, not a kernel driver.
@@ -767,7 +745,7 @@ The academic training follows six development stages.
 
 ---
 
-## 29. Future Enhancements
+## 28. Future Enhancements
 
 > [!NOTE]
 > The items below are **future enhancements only**. None of them is part of the current implementation.
@@ -784,7 +762,7 @@ The academic training follows six development stages.
 
 ---
 
-## 30. Author
+## 29. Author
 
 | | |
 |---|---|
@@ -796,7 +774,7 @@ The academic training follows six development stages.
 
 ---
 
-## 31. Conclusion
+## 30. Conclusion
 
 This project brings together the main themes of the training — Linux, C++, device-driver concepts, system programming and software architecture — in one compact application. A simulated pulse stream is received by a user-space `DeviceDriver`, counted, converted into energy, analysed for average power, priced using a fixed tariff and recorded in a log file.
 
