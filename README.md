@@ -698,7 +698,7 @@ The academic training follows six development stages.
 | Stage | Title | Focus |
 |:---:|---|---|
 | **1** | Project Introduction | Project idea, objective, problem statement, scope, expected outcome |
-| **2** | Project Requirements & Development Plan | PRD, scope, modules, features, deliverables, development plan, timeline |
+| **2** | Project Requirements & Development Plan | Scope, modules, features, deliverables, development plan, timeline |
 | **3** | System Design & Architecture | Architecture diagrams, major components, data structures, UML diagrams, implementation plan, development environment, Git repository |
 | **4** | Initial Implementation & Prototype | Implement core modules, create prototype, integrate components |
 | **5** | Testing & Validation | Verify behaviour and calculations |
