@@ -1,27 +1,21 @@
 #include "AnalyticsEngine.h"
 
+using namespace std;
+
 AnalyticsEngine::AnalyticsEngine() {
 }
 
-double AnalyticsEngine::calculateAveragePower(double energyKWh,double timeHours) const {
+double AnalyticsEngine::calculateAveragePower(
+    double energyKWh,
+    double elapsedSeconds) const {
 
-    if (timeHours <= 0) {
+    if (elapsedSeconds <= 0) {
         return 0.0;
     }
 
-    return energyKWh / timeHours;
-}
+    // 1 kWh = 3,600,000 Joules
+    // Power (W) = Energy (kWh) × 3,600,000 / Time (seconds)
 
-bool AnalyticsEngine::isHighConsumption(double energyKWh,double thresholdKWh) const {
+    return (energyKWh * 3600000.0) / elapsedSeconds;
 
-    return energyKWh > thresholdKWh;
-}
-
-const char* AnalyticsEngine::getConsumptionStatus(double energyKWh,double thresholdKWh) const {
-
-    if (isHighConsumption(energyKWh, thresholdKWh)) {
-        return "HIGH";
-    }
-
-    return "NORMAL";
 }

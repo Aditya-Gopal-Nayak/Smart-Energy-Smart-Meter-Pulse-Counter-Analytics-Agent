@@ -20,32 +20,48 @@ int main() {
     AnalyticsEngine analytics;
     Logger logger("logs/meter.log");
 
+    int simulatedPulses;
+    double measurementTimeHours;
+
+    // Meter configuration
+    const double electricityRate = 8.0;   // ₹8 per kWh
+
     cout << "========================================\n";
-    cout << "        SMART ENERGY METER\n";
+    cout << "          SMART ENERGY METER\n";
     cout << "========================================\n";
 
-    cout << "Generating 10 simulated pulses...\n";
+    cout << "\nEnter number of pulses: ";
+    cin >> simulatedPulses;
 
-    generator.generateMultiplePulses(3600);
+    cout << "Enter measurement time (hours): ";
+    cin >> measurementTimeHours;
 
+    // Validate input
+    if (simulatedPulses <= 0 || measurementTimeHours <= 0) {
+        cout << "\nError: Please enter valid positive values.\n";
+        return 1;
+    }
+
+    cout << "\nSimulating meter operation...\n";
+
+    // Generate pulses
+    generator.generateMultiplePulses(simulatedPulses);
+
+    // Read pulse count
     unsigned long long totalPulses = counter.getCount();
 
+    // Calculate energy
     double energy =
         energyCalculator.calculateEnergy(totalPulses);
 
-    double timeHours = 1.0;
+    // Convert hours to seconds
+    double elapsedSeconds = measurementTimeHours * 3600.0;
 
-    double averagePower =
-        analytics.calculateAveragePower(
-            energy, timeHours);
+    // Calculate average power in Watts
+    double averagePower = analytics.calculateAveragePower(energy,elapsedSeconds);
 
-    double threshold = 5.0;
-
-    const char* status =
-        analytics.getConsumptionStatus(
-            energy, threshold);
-
-    cout << fixed << setprecision(2);
+    // Calculate estimated cost
+    double estimatedCost = energy * electricityRate;
 
     cout << "\n";
     cout << "----------------------------------------\n";
@@ -55,22 +71,30 @@ int main() {
     cout << "Total Pulses       : "
          << totalPulses << endl;
 
+    cout << fixed << setprecision(3);
+
     cout << "Energy Consumed    : "
          << energy << " kWh" << endl;
 
+    cout << fixed << setprecision(2);
+
+    cout << "Measurement Time   : "
+         << measurementTimeHours << " hours" << endl;
+
     cout << "Average Power      : "
-         << averagePower << " kW" << endl;
+         << averagePower << " W" << endl;
 
-    cout << "Consumption Status : "
-         << status << endl;
+    cout << "Electricity Rate   : ₹"
+         << electricityRate << " / kWh" << endl;
 
-    cout << "----------------------------------------\n";
+    cout << "Estimated Cost     : ₹"
+         << estimatedCost << endl;
 
+    // Save reading
     logger.logReading(
         totalPulses,
         energy,
-        averagePower,
-        status
+        averagePower
     );
 
     cout << "Reading saved to   : logs/meter.log\n";

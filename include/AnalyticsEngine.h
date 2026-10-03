@@ -5,11 +5,8 @@ class AnalyticsEngine {
 public:
     AnalyticsEngine();
 
-    double calculateAveragePower(double energyKWh,double timeHours) const;
+    double calculateAveragePower(double energyKWh,double elapsedSeconds) const;
 
-    bool isHighConsumption(double energyKWh,double thresholdKWh) const;
-
-    const char* getConsumptionStatus(double energyKWh,double thresholdKWh) const;
 };
 
 #endif

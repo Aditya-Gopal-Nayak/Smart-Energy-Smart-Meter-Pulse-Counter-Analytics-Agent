@@ -11,8 +11,7 @@ public:
 
     void logReading(unsigned long long pulses,
                     double energyKWh,
-                    double averagePower,
-                    const string& status);
+                    double averagePower);
 
 private:
     string filename;

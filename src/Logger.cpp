@@ -9,7 +9,7 @@ using namespace std;
 Logger::Logger(const string& filename) : filename(filename) {
 }
 
-void Logger::logReading(unsigned long long pulses,double energyKWh,double averagePower,const string& status) {
+void Logger::logReading(unsigned long long pulses,double energyKWh,double averagePower) {
     ofstream logFile(filename, ios::app);
 
     if (!logFile) {
@@ -22,7 +22,6 @@ void Logger::logReading(unsigned long long pulses,double energyKWh,double averag
     logFile << "Pulses: " << pulses
             << " | Energy: " << energyKWh << " kWh"
             << " | Average Power: " << averagePower << " kW"
-            << " | Status: " << status
             << '\n';
 
     logFile.close();
