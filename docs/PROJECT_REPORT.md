@@ -11,7 +11,6 @@
 | 📚 **Degree** | B.Tech in Computer Science & Engineering |
 | 🏛️ **Institute** | Institute of Technical Education and Research (ITER) |
 | 🏫 **University** | Siksha 'O' Anusandhan University |
-| 📅 **Batch** | 2027 |
 
 ---
 
