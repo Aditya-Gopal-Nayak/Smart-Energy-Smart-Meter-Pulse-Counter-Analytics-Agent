@@ -287,6 +287,7 @@ SmartEnergyMeter/
 │   ├── EnergyCalculator.cpp
 │   ├── AnalyticsEngine.cpp
 │   └── Logger.cpp
+|
 ├── include/
 │   ├── PulseGenerator.h
 │   ├── DeviceDriver.h
@@ -294,6 +295,7 @@ SmartEnergyMeter/
 │   ├── EnergyCalculator.h
 │   ├── AnalyticsEngine.h
 │   └── Logger.h
+|
 ├── docs/
 |   ├── STAGE_1_PROJECT_INTRODUCTION.md
 │   ├── STAGE_2_PROJECT_REQUIREMENTS_AND_DEVELOPMENT_PLAN.md
@@ -302,6 +304,7 @@ SmartEnergyMeter/
 │   ├── STAGE_5_TESTING_INTEGRATION_AND_IMPROVEMENT.md
 │   ├── STAGE_6_FINAL_IMPLEMENTATION_AND_PRESENTATION.md
 |   └── PROJECT_REPORT.md
+|
 ├── logs/
 │   └── meter.log
 |
