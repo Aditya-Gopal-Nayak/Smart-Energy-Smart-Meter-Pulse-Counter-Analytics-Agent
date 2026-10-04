@@ -11,7 +11,6 @@
 | 📚 **Degree** | B.Tech in Computer Science & Engineering |
 | 🏛️ **Institute** | Institute of Technical Education and Research (ITER) |
 | 🏫 **University** | Siksha 'O' Anusandhan University |
-| 📅 **Batch** | 2027 |
 
 ---
 
@@ -604,7 +603,6 @@ int main() {
     cout << "Estimated Cost     : ₹"
          << estimatedCost << endl;
 
-    cout << "----------------------------------------\n";
 
     logger.logReading(
         totalPulses,
@@ -736,12 +734,15 @@ SmartEnergyMeter/
 │   ├── AnalyticsEngine.h
 │   └── Logger.h
 ├── docs/
+<<<<<<< HEAD
 |   ├── STAGE_1_PROJECT_INTRODUCTION.md
 │   ├── STAGE_2_PROJECT_REQUIREMENTS_AND_DEVELOPMENT_PLAN.md
 │   ├── STAGE_3_SYSTEM_DESIGN_AND_ARCHITECTURE.md
 │   ├── STAGE_4_INITIAL_IMPLEMENTATION_AND_PROTOTYPE.md
 │   ├── STAGE_5_TESTING_INTEGRATION_AND_IMPROVEMENT.md
 │   ├── STAGE_6_FINAL_IMPLEMENTATION_AND_PRESENTATION.md
+=======
+>>>>>>> 7692d60482bc40615eb77aa0e46f5e0247d7a385
 |   └── PROJECT_REPORT.md
 ├── logs/
 │   └── meter.log
