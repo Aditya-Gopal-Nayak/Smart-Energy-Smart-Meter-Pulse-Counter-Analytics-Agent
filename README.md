@@ -770,7 +770,6 @@ The academic training follows six development stages.
 | **Name** | Aditya Gopal Nayak |
 | **Degree** | B.Tech in Computer Science & Engineering |
 | **Institute** | Institute of Technical Education and Research (ITER), Siksha 'O' Anusandhan University |
-| **Batch** | 2027 |
 | **Project Type** | Individual Academic Project |
 
 ---
