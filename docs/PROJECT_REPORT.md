@@ -603,7 +603,6 @@ int main() {
     cout << "Estimated Cost     : ₹"
          << estimatedCost << endl;
 
-    cout << "----------------------------------------\n";
 
     logger.logReading(
         totalPulses,
