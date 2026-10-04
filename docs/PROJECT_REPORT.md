@@ -734,7 +734,8 @@ SmartEnergyMeter/
 │   ├── EnergyCalculator.h
 │   ├── AnalyticsEngine.h
 │   └── Logger.h
-├── tests/
+├── docs/
+|   └── PROJECT_REPORT.md
 ├── logs/
 │   └── meter.log
 ├── Makefile
