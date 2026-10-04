@@ -735,9 +735,17 @@ SmartEnergyMeter/
 │   ├── EnergyCalculator.h
 │   ├── AnalyticsEngine.h
 │   └── Logger.h
-├── tests/
+├── docs/
+|   ├── STAGE_1_PROJECT_INTRODUCTION.md
+│   ├── STAGE_2_PROJECT_REQUIREMENTS_AND_DEVELOPMENT_PLAN.md
+│   ├── STAGE_3_SYSTEM_DESIGN_AND_ARCHITECTURE.md
+│   ├── STAGE_4_INITIAL_IMPLEMENTATION_AND_PROTOTYPE.md
+│   ├── STAGE_5_TESTING_INTEGRATION_AND_IMPROVEMENT.md
+│   ├── STAGE_6_FINAL_IMPLEMENTATION_AND_PRESENTATION.md
+|   └── PROJECT_REPORT.md
 ├── logs/
 │   └── meter.log
+|
 ├── Makefile
 └── README.md
 ```
